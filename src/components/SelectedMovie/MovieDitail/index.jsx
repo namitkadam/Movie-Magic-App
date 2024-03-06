@@ -1,0 +1,68 @@
+import { useEffect, useState } from "react";
+import axios from "../../Api/index.jsx";
+import { useParams } from "react-router-dom";
+import MovieCard from "../MovieCard/index.jsx";
+import Genres from "../Genres/index.jsx";
+import Recommendations from "../../Recommendations/index.jsx";
+import Loader from "../../Loader/index.jsx";
+
+export default function MovieDitail() {
+  const [getData, setgetData] = useState(null);
+  let { id } = useParams();
+  const getApiData = async () => {
+    try {
+      const res = await axios.get(`/movie/${id}?language=en-US`);
+      setgetData(res.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  console.log("MovieDitail id", id);
+  useEffect(() => {
+    getApiData();
+  }, [id]);
+  if (getData === null) {
+    return (
+      <div>
+        <Loader />
+      </div>
+    );
+  }
+  console.log(getData);
+  return (
+    <>
+      <div className="w-screen px-5">
+        <div className="flex my-8 w-full px-12">
+          <MovieCard
+            src={getData.poster_path}
+            name={getData.name ? getData.original_name : getData.original_title}
+            tagline={getData.tagline}
+            rating={getData.vote_average}
+            voteCount={getData.vote_average}
+            date={
+              getData.name
+                ? getData.first_air_date.split("-").at(0)
+                : getData.release_date.split("-").at(0)
+            }
+            runtime={getData.runtime}
+            language={getData.spoken_languages[0].english_name}
+            overview={getData.overview}
+            title={getData.vote_count}
+            genres={
+              <div className="flex gap-2.5 max-md:flex-col">
+                {getData.genres.map((genre) => (
+                  <Genres key={genre.id} name={genre.name} />
+                ))}
+              </div>
+            }
+            imdbId={getData.imdb_id}
+            homepage={getData.homepage}
+          />
+        </div>
+        <div>
+          <Recommendations />
+        </div>
+      </div>
+    </>
+  );
+}
