@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/movie-magic/static/css/main.9e857d20.css",
-    "main.js": "/movie-magic/static/js/main.9572aebe.js",
-    "static/js/453.6f2e229a.chunk.js": "/movie-magic/static/js/453.6f2e229a.chunk.js",
-    "static/media/Movie.png": "/movie-magic/static/media/Movie.9fbb66b1c50ac8371abd.png",
-    "index.html": "/movie-magic/index.html",
-    "main.9e857d20.css.map": "/movie-magic/static/css/main.9e857d20.css.map",
-    "main.9572aebe.js.map": "/movie-magic/static/js/main.9572aebe.js.map",
-    "453.6f2e229a.chunk.js.map": "/movie-magic/static/js/453.6f2e229a.chunk.js.map"
+    "main.css": "/Movie-Magic-App/static/css/main.9e857d20.css",
+    "main.js": "/Movie-Magic-App/static/js/main.513b3c0e.js",
+    "static/js/453.6f2e229a.chunk.js": "/Movie-Magic-App/static/js/453.6f2e229a.chunk.js",
+    "static/media/Movie.png": "/Movie-Magic-App/static/media/Movie.9fbb66b1c50ac8371abd.png",
+    "index.html": "/Movie-Magic-App/index.html",
+    "main.9e857d20.css.map": "/Movie-Magic-App/static/css/main.9e857d20.css.map",
+    "main.513b3c0e.js.map": "/Movie-Magic-App/static/js/main.513b3c0e.js.map",
+    "453.6f2e229a.chunk.js.map": "/Movie-Magic-App/static/js/453.6f2e229a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9e857d20.css",
-    "static/js/main.9572aebe.js"
+    "static/js/main.513b3c0e.js"
   ]
 }
