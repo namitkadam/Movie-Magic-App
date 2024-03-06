@@ -8,14 +8,17 @@ import SearchHome from "../components/SearchHome/index.jsx";
 
 export const PublicRouter = createBrowserRouter([
   {
-    path: "/",
+    path: "/Movie-Magic-App",
     element: <RootLayout />,
     children: [
       { index: true, element: <Home /> },
-      { path: "/:mediaType/:id/", element: <Movie /> },
-      { path: "/genres/:name/:id/", element: <GenresHome /> },
-      { path: "/discover/:discoverName", element: <DiscoverdHome /> },
-      { path: "/search/:search", element: <SearchHome /> },
+      { path: "/Movie-Magic-App/:mediaType/:id/", element: <Movie /> },
+      { path: "/Movie-Magic-App/genres/:name/:id/", element: <GenresHome /> },
+      {
+        path: "/Movie-Magic-App/discover/:discoverName",
+        element: <DiscoverdHome />,
+      },
+      { path: "/Movie-Magic-App/search/:search", element: <SearchHome /> },
     ],
   },
 ]);
