@@ -22,7 +22,7 @@ export default function MovieCard(props) {
     homepage,
   } = props;
   return (
-    <div className="flex justify-around gap-5 max-sm:flex-col max-md:w-full md:gap-1">
+    <div className="flex justify-around w-full gap-5 max-sm:flex-col max-md:w-full md:gap-1">
       <div className="flex justify-center">
         <div className="h-[480px] w-[350px] md:w-80 max-md:h-auto sm:w-64">
           <Img
@@ -73,7 +73,7 @@ export default function MovieCard(props) {
             {overview}
           </p>
         </div>
-        <div className="flex mt-20 justify-between max-sm:flex-col md:mt-9 max-md:gap-3 sm:mt-4">
+        <div className="flex mt-20 gap-1 justify-between max-sm:flex-col md:mt-9 max-md:gap-3 sm:mt-4">
           <div className="flex gap-4 md:gap-1">
             <div>
               <a target="_blank" href={homepage} className="link">

@@ -4,12 +4,11 @@ import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import SingleCard from "../SingleCard";
 import Loader from "../Loader";
+import Empty from "../../Img/Empty.png";
 
 export default function GenresList() {
   const [genres, setGenres] = useState(null);
   let { id } = useParams();
-
-  console.log("SelectedList ID", id);
 
   const getApiData = async () => {
     try {
@@ -42,7 +41,11 @@ export default function GenresList() {
             // key={`movie-list-${movie.id}-${index}`}
             name={movie.name ? movie.original_name : movie.original_title}
             overview={movie.overview}
-            src={movie.poster_path}
+            src={
+              movie.poster_path
+                ? `https://image.tmdb.org/t/p/original${movie.poster_path}`
+                : `${Empty}`
+            }
             rating={movie.vote_average}
           />
         </Link>

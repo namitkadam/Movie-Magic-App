@@ -6,12 +6,7 @@ export default function Img(props) {
   const { src, alt, classValue } = props;
   return (
     <div className="overflow-hidden bg-cover bg-no-repeat w-full h-full">
-      <img
-        className={classValue}
-        src={`https://image.tmdb.org/t/p/original${src}`}
-        loading="lazy"
-        alt={alt}
-      />
+      <img className={classValue} src={src} loading="lazy" alt={alt} />
       {/* <LazyLoadImage
         effect="blur"
         src={`https://image.tmdb.org/t/p/original${src}`}

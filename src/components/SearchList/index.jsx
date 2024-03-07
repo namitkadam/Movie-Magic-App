@@ -2,9 +2,9 @@ import axios from "../Api/index";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Loader from "../Loader";
-// import { Link } from "react-router-dom";
 import SingleCard from "../SingleCard";
 import NoResultsFound from "../NoResultsFound";
+import Empty from "../../Img/Empty.png";
 
 export default function SearchList(params) {
   const [searchData, setSearchData] = useState(null);
@@ -24,8 +24,6 @@ export default function SearchList(params) {
     getSearchApi();
   }, [search]);
 
-  console.log("searchData", searchData);
-
   if (searchData === null) {
     return (
       <>
@@ -33,15 +31,7 @@ export default function SearchList(params) {
       </>
     );
   }
-  console.log(searchData.results.length === 0);
 
-  // if (searchData.results.length === 0) {
-  //   return (
-  //     <>
-  //       <div>hey</div>
-  //     </>
-  //   );
-  // }
   return (
     <>
       {searchData.results.length === 0 ? (
@@ -63,7 +53,11 @@ export default function SearchList(params) {
                 key={`movie-list-${movie.id}-${index}`}
                 name={movie.name ? movie.original_name : movie.original_title}
                 overview={movie.overview}
-                src={movie.poster_path}
+                src={
+                  movie.poster_path
+                    ? `https://image.tmdb.org/t/p/original${movie.poster_path}`
+                    : `${Empty}`
+                }
                 rating={movie.vote_average}
               />
             </Link>

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import SingleCard from "../SingleCard";
 import Loader from "../Loader";
 import PagePagination from "../Pagination";
+import Empty from "../../Img/Empty.png";
 
 export default function CardList({}) {
   const [getData, setgetData] = useState(null);
@@ -21,7 +22,7 @@ export default function CardList({}) {
   useEffect(() => {
     getApiData();
   }, []);
-  console.log("CardList", getData);
+
   if (getData === null) {
     return (
       <>
@@ -29,11 +30,6 @@ export default function CardList({}) {
       </>
     );
   }
-
-  // console.log(
-  //   "CardList---->",
-  //   getData.results.map((x) => x.genre_ids.find((x) => x === 28))
-  // );
 
   return (
     <div>
@@ -48,7 +44,11 @@ export default function CardList({}) {
               key={`movie-list-${movie.id}-${index}`}
               name={movie.name ? movie.original_name : movie.original_title}
               overview={movie.overview}
-              src={movie.poster_path}
+              src={
+                movie.poster_path
+                  ? `https://image.tmdb.org/t/p/original${movie.poster_path}`
+                  : `${Empty}`
+              }
               rating={movie.vote_average}
               al
             />

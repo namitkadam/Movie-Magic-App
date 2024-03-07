@@ -5,6 +5,7 @@ import MovieCard from "../MovieCard/index.jsx";
 import Genres from "../Genres/index.jsx";
 import Recommendations from "../../Recommendations/index.jsx";
 import Loader from "../../Loader/index.jsx";
+import Empty from "../../../Img/Empty.png";
 
 export default function MovieDitail() {
   const [getData, setgetData] = useState(null);
@@ -17,7 +18,6 @@ export default function MovieDitail() {
       console.error(error);
     }
   };
-  console.log("MovieDitail id", id);
   useEffect(() => {
     getApiData();
   }, [id]);
@@ -28,13 +28,16 @@ export default function MovieDitail() {
       </>
     );
   }
-  console.log(getData);
   return (
     <>
       <div className="w-screen px-5">
         <div className="flex my-8 w-full px-12 sm:px-0 max-md:px-0 max-md:mt-0">
           <MovieCard
-            src={getData.poster_path}
+            src={
+              getData.poster_path
+                ? `https://image.tmdb.org/t/p/original${getData.poster_path}`
+                : `${Empty}`
+            }
             name={getData.name ? getData.original_name : getData.original_title}
             tagline={getData.tagline}
             rating={getData.vote_average}

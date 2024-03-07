@@ -6,6 +6,7 @@ import { Link, useParams } from "react-router-dom";
 import Loader from "../../components/Loader/index";
 
 import NoResultsFound from "../NoResultsFound";
+import Empty from "../../Img/Empty.png";
 
 export default function Recommendations(params) {
   const [recommendations, setRecommendations] = useState(null);
@@ -24,6 +25,7 @@ export default function Recommendations(params) {
   useEffect(() => {
     getApiData();
   }, []);
+
   if (recommendations === null) {
     return (
       <>
@@ -32,7 +34,6 @@ export default function Recommendations(params) {
     );
   }
 
-  console.log("recommendations-->", recommendations.results.length);
   return (
     <>
       <div className="mt-20 mb-10 md:mt-10 md:mb-5 max-sm:mt-1 sm:mt-3">
@@ -58,7 +59,11 @@ export default function Recommendations(params) {
                 key={`movie-list-${movie.id}-${index}`}
                 name={movie.name ? movie.original_name : movie.original_title}
                 overview={movie.overview}
-                src={movie.poster_path}
+                src={
+                  movie.poster_path
+                    ? `https://image.tmdb.org/t/p/original${movie.poster_path}`
+                    : `${Empty}`
+                }
                 rating={movie.vote_average}
               />
             </Link>

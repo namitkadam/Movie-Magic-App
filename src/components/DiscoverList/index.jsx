@@ -4,6 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import SingleCard from "../SingleCard/index";
 import Loader from "../Loader";
 import { useState, useEffect } from "react";
+import Empty from "../../Img/Empty.png";
 
 export default function DiscoverList() {
   const [discover, setDiscover] = useState(null);
@@ -44,7 +45,11 @@ export default function DiscoverList() {
             key={`movie-list-${movie.id}-${index}`}
             name={movie.name ? movie.original_name : movie.original_title}
             overview={movie.overview}
-            src={movie.poster_path}
+            src={
+              movie.poster_path
+                ? `https://image.tmdb.org/t/p/original${movie.poster_path}`
+                : `${Empty}`
+            }
             rating={movie.vote_average}
           />
         </Link>
