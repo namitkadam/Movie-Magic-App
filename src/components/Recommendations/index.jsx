@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Loader from "../../components/Loader/index";
 
+import NoResultsFound from "../NoResultsFound";
+
 export default function Recommendations(params) {
   const [recommendations, setRecommendations] = useState(null);
   let { id } = useParams();
@@ -29,35 +31,40 @@ export default function Recommendations(params) {
       </>
     );
   }
-  console.log(
-    "recommendations-->",
-    recommendations.results.map((x) => x)
-  );
+
+  console.log("recommendations-->", recommendations.results.length);
   return (
-    <div>
-      <div className="mt-20 mb-10">
-        <h6 className="text-3xl uppercase font-sans font-thin max-md:text-2xl">
-          Recommendations
+    <>
+      <div className="mt-20 mb-10 md:mt-10 md:mb-5 max-sm:mt-1 sm:mt-3">
+        <h6 className="text-[22px] uppercase font-sans font-thin max-md:text-2xl text-[#263238]">
+          Recommended
         </h6>
-        <p className="font-sans font-semibold text-lg">Movie</p>
+        <p className="font-sans font-bold uppercase text-[12px] text-[#37474f]">
+          Movie
+        </p>
       </div>
-      <div className="grid justify-items-center gap-5 grid-cols-1 xl:grid-cols-4 sm:grid-cols-2 lg:px-10 lg:grid-cols-3 xxl:grid-cols-4 m-auto md:px-9 xl:px-5 max-lg:px-5 max-sm:px-5">
-        {recommendations.results.map((movie, index) => (
-          <Link
-            key={movie.id}
-            className="max-sm:w-full max-lg:w-full w-full"
-            to={`/movie/${movie.id}`}
-          >
-            <SingleCard
-              key={`movie-list-${movie.id}-${index}`}
-              name={movie.name ? movie.original_name : movie.original_title}
-              overview={movie.overview}
-              src={movie.poster_path}
-              rating={movie.vote_average}
-            />
-          </Link>
-        ))}
-      </div>
-    </div>
+      {recommendations.results.length === 0 ? (
+        <NoResultsFound error={"There are no recommended movies..."} />
+      ) : (
+        // <div className="grid justify-items-center gap-5 grid-cols-1 xl:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 lg:px-0 lg:grid-cols-4 xxl:grid-cols-4 m-auto md:px-0 xl:px-5 max-lg:px-5 max-sm:px-0 sm:p-0">
+        <div className="grid justify-items-center gap-5 grid-cols-1 px-4 min-[350px]:grid-cols-2 min-[678px]:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 max-sm:px-0 sm:p-0">
+          {recommendations.results.map((movie, index) => (
+            <Link
+              key={movie.id}
+              className="max-sm:w-full max-lg:w-full w-full"
+              to={`/Movie-Magic-App/movie/${movie.id}`}
+            >
+              <SingleCard
+                key={`movie-list-${movie.id}-${index}`}
+                name={movie.name ? movie.original_name : movie.original_title}
+                overview={movie.overview}
+                src={movie.poster_path}
+                rating={movie.vote_average}
+              />
+            </Link>
+          ))}
+        </div>
+      )}
+    </>
   );
 }

@@ -11,14 +11,17 @@ export default function Header() {
       <header className="py-4 px-14 max-lg:px-10 max-md:px-5">
         <div className="flex items-center justify-between h-10">
           <div className="h-auto leading-none xl:max-w-screen-xl lg:max-w-screen-lg md:max-w-screen-md sm:max-w-screen-sm">
-            <Link to={"/"} className="font-semibold text-xl text-[#263238]">
+            <Link
+              to={"/Movie-Magic-App"}
+              className="font-semibold text-xl text-[#263238]"
+            >
               Movie Magic
             </Link>
           </div>
           <div className="flex">
             <Search />
+            <Navbar />
           </div>
-          <Navbar />
         </div>
       </header>
     </>

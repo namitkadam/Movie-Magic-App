@@ -24,7 +24,7 @@ export default function Search({ value }) {
               name="search"
             />
           </label>
-          <Link to={`/search/${search}`}>
+          <Link to={`/Movie-Magic-App/search/${search}`}>
             <input
               type="submit"
               className="search-submit"

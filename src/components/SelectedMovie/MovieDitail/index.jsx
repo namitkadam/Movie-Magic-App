@@ -23,16 +23,16 @@ export default function MovieDitail() {
   }, [id]);
   if (getData === null) {
     return (
-      <div>
+      <>
         <Loader />
-      </div>
+      </>
     );
   }
   console.log(getData);
   return (
     <>
       <div className="w-screen px-5">
-        <div className="flex my-8 w-full px-12">
+        <div className="flex my-8 w-full px-12 sm:px-0 max-md:px-0 max-md:mt-0">
           <MovieCard
             src={getData.poster_path}
             name={getData.name ? getData.original_name : getData.original_title}
@@ -49,9 +49,11 @@ export default function MovieDitail() {
             overview={getData.overview}
             title={getData.vote_count}
             genres={
-              <div className="flex gap-2.5 max-md:flex-col">
-                {getData.genres.map((genre) => (
-                  <Genres key={genre.id} name={genre.name} />
+              <div className="flex gap-2.5 max-md:flex-col sm:gap-1">
+                {getData.genres.map((genre, index) => (
+                  <div key={`genre-list-${genre.name}-${index}`}>
+                    <Genres name={genre.name} />
+                  </div>
                 ))}
               </div>
             }
@@ -59,9 +61,9 @@ export default function MovieDitail() {
             homepage={getData.homepage}
           />
         </div>
-        <div>
+        <>
           <Recommendations />
-        </div>
+        </>
       </div>
     </>
   );
