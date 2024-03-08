@@ -52,7 +52,7 @@ export default function MovieDitail() {
             overview={getData.overview}
             title={getData.vote_count}
             genres={
-              <div className="flex gap-2.5 max-md:flex-col sm:gap-1">
+              <div className="flex gap-0.5">
                 {getData.genres.map((genre, index) => (
                   <div key={`genre-list-${genre.name}-${index}`}>
                     <Genres name={genre.name} />

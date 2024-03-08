@@ -31,7 +31,7 @@ export default function GenreList() {
   // console.log("Genres---->", genres.genres);
   return (
     <div>
-      <div className="mb-1.5 text-[10px] font-bold uppercase text-[#263238]">
+      <div className="mb-1.5 text-[10px] font-bold uppercase text-[#263238] max-lg:text-white">
         Genres
       </div>
       <div>

@@ -38,7 +38,7 @@ export default function MovieCard(props) {
         <h6 className="text-sm font-semibold uppercase text-[#37474f] mt-1 md:mt-2  max-sm:text-xs ">
           {tagline}
         </h6>
-        <div className="flex justify-between my-3  max-md:gap-1.5 md:mt-2 max-md:flex-col sm:my-1.5">
+        <div className="flex justify-between my-3  max-md:gap-1.5 md:mt-2 max-md:flex-col max-md:my-2">
           <div className="flex gap-1.5 items-center">
             <StarRating rating={rating} title={title} />
             <p className="font-semibold text-xs text-[#37474f]">{voteCount}</p>
@@ -59,13 +59,13 @@ export default function MovieCard(props) {
             </p>
           </div>
         </div>
-        <div className="mt-3.5 mb-6 md:mb-2 md:mt-2 sm:my-1 ">
+        <div className="mt-3.5 mb-6 md:my-2 max-md:my-0.5 ">
           <p className="font-bold text-[11.5px] uppercase mb-2 sm:mb-1 text-[#263238]">
             The Genres
           </p>
           {genres}
         </div>
-        <div className="mt-5 max-md:w-full  md:mt-2 sm:mt-2">
+        <div className="mt-5 max-md:w-full  max-md:mt-2.5 sm:mt-2">
           <p className="font-bold text-[11.5px] uppercase  mb-3.5 sm:mb-1 text-[#263238] ">
             The Synopsis
           </p>
@@ -73,7 +73,7 @@ export default function MovieCard(props) {
             {overview}
           </p>
         </div>
-        <div className="flex mt-20 gap-1 justify-between max-sm:flex-col md:mt-9 max-md:gap-3 sm:mt-4">
+        <div className="flex mt-20 gap-1 justify-between max-sm:flex-col max-sm:mt-5 md:mt-9 max-md:gap-3 sm:mt-4">
           <div className="flex gap-4 md:gap-1">
             <div>
               <a target="_blank" href={homepage} className="link">
