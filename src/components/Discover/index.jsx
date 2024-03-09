@@ -6,8 +6,8 @@ import List from "../List";
 
 export default function Discover({ wrapperClass }) {
   return (
-    <div className={wrapperClass}>
-      <div className="mb-1.5 text-[10px] font-bold uppercase text-[#263238] max-lg:text-gray-100">
+    <div className={`max-lg:flex flex-col items-center ${wrapperClass}`}>
+      <div className="mb-1.5 text-[10px] font-bold uppercase text-[#263238] max-lg:text-white">
         Discover
       </div>
       <Link to={"discover/now_playing"}>

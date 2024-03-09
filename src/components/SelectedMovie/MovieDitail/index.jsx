@@ -30,7 +30,7 @@ export default function MovieDitail() {
   }
   return (
     <>
-      <div className="w-screen px-5">
+      <div className="w-screen px-5 overflow-hidden">
         <div className="flex my-8 w-full px-12 sm:px-0 max-md:px-0 max-md:mt-0">
           <MovieCard
             src={

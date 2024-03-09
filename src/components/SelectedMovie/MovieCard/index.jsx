@@ -4,6 +4,7 @@ import StarRating from "../../StarRating";
 import "./index.css";
 import { FaImdb, FaLink } from "react-icons/fa";
 import { IoMdArrowRoundBack } from "react-icons/io";
+import CastItem from "../../CastItem";
 
 export default function MovieCard(props) {
   const {
@@ -22,13 +23,10 @@ export default function MovieCard(props) {
     homepage,
   } = props;
   return (
-    <div className="flex justify-around w-full gap-5 max-sm:flex-col max-md:w-full md:gap-1">
+    <div className="flex justify-around gap-5 max-sm:flex-col max-md:w-full md:gap-1">
       <div className="flex justify-center">
         <div className="h-[480px] w-[350px] md:w-80 max-md:h-auto sm:w-64">
-          <Img
-            src={`${src}`}
-            classValue="rounded-md h-full object-fill w-full"
-          />
+          <Img src={`${src}`} classValue="rounded-md h-full object-fill" />
         </div>
       </div>
       <div className="left_side_card uppercase px-7 flex flex-col max-md:px-1">
@@ -73,7 +71,10 @@ export default function MovieCard(props) {
             {overview}
           </p>
         </div>
-        <div className="flex mt-20 gap-1 justify-between max-sm:flex-col max-sm:mt-5 md:mt-9 max-md:gap-3 sm:mt-4">
+        <div>
+          <CastItem />
+        </div>
+        <div className="flex max-lg:mt-20 gap-1 justify-between max-sm:flex-col max-sm:mt-5 md:mt-9 max-md:gap-3 sm:mt-4">
           <div className="flex gap-4 md:gap-1">
             <div>
               <a target="_blank" href={homepage} className="link">
@@ -102,7 +103,7 @@ export default function MovieCard(props) {
               href={homepage}
               className="flex justify-center rounded-full items-center gap-1 text-[10px] font-extralight text-white p-2.5 bg-[#263238] hover:bg-transparent hover:text-[#263238] border-[1px] border-[#263238] transition duration-500 hover:-translate-y-1"
             >
-              <IoMdArrowRoundBack />
+              <Link />
               Back
             </div>
           </Link>

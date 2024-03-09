@@ -34,7 +34,7 @@ export default function GenreList() {
       <div className="mb-1.5 text-[10px] font-bold uppercase text-[#263238] max-lg:text-white">
         Genres
       </div>
-      <div>
+      <div className="max-lg:flex flex-col items-center">
         {genres.genres.map((genre, index) => (
           <Link
             key={`movie-list-${genre.id}-${index}`}
