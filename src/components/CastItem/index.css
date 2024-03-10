@@ -1,22 +1,26 @@
 .carousle{
     display: flex;
     justify-content: center;
+    align-items:    center;
     width: 100%;
-    height: 100%;
-    align-items: center;
-
+    /* height: 100vh; */
+    background-color: aqua;
+    gap: 1rem;
 }
 .carousleContainer{
     display: flex;
-    gap: 10px;
-    background-color: red;
-    scroll-behavior: smooth;
+    gap: 1rem;
+    width: 200px;
     overflow: hidden;
-    width: 96rem;
+    scroll-behavior: smooth;
 }
-.carousleItem{
-    width: 5rem;
-    height: 5rem;
+/* .carousleItem{
+    width: 20rem;
+    height: 10rem;
+} */
+.carousleItem .list{
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;

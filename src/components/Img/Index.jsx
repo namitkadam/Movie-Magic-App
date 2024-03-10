@@ -3,12 +3,18 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 import Loader from "../Loader";
 
 export default function Img(props) {
-  const { src, alt, classValue, ImgContainer } = props;
+  const { src, alt, classValue, ImgContainer, title } = props;
   return (
     <div
       className={`overflow-hidden bg-cover bg-no-repeat w-full h-full ${ImgContainer}`}
     >
-      <img className={classValue} src={src} loading="lazy" alt={alt} />
+      <img
+        className={classValue}
+        src={src}
+        loading="lazy"
+        alt={alt}
+        title={title}
+      />
       {/* <LazyLoadImage
         effect="blur"
         src={`https://image.tmdb.org/t/p/original${src}`}

@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import Img from "../../Img/Index";
+// import Img from "../../Img/Index";
 import StarRating from "../../StarRating";
 import "./index.css";
 import { FaImdb, FaLink } from "react-icons/fa";
 import { IoMdArrowRoundBack } from "react-icons/io";
 import CastItem from "../../CastItem";
-
+import LeftSideCardImg from "../../SelectedMovie/LeftSideCardImg/index";
 export default function MovieCard(props) {
   const {
     src,
@@ -21,15 +21,17 @@ export default function MovieCard(props) {
     title,
     imdbId,
     homepage,
+    ImgTitle,
   } = props;
   return (
-    <div className="flex justify-around gap-5 max-sm:flex-col max-md:w-full md:gap-1">
-      <div className="flex justify-center">
+    <div className="flex w-full justify-around gap-5 max-sm:flex-col max-md:w-full md:gap-1">
+      {/* <div className="w-[30%] flex justify-center">
         <div className="h-[480px] w-[350px] md:w-80 max-md:h-auto sm:w-64">
           <Img src={`${src}`} classValue="rounded-md h-full object-fill" />
         </div>
-      </div>
-      <div className="left_side_card uppercase px-7 flex flex-col max-md:px-1">
+      </div> */}
+      <LeftSideCardImg src={src} title={ImgTitle} />
+      <div className="w-[70%] max-sm:w-full left_side_card uppercase px-7 flex flex-col max-md:px-1">
         <h1 className="text-4xl font-light text-[#263238] mt-2 max-sm:text-xl">
           {name}
         </h1>
@@ -71,14 +73,14 @@ export default function MovieCard(props) {
             {overview}
           </p>
         </div>
-        <div>
+        <>
           <CastItem />
-        </div>
+        </>
         <div className="flex max-lg:mt-20 gap-1 justify-between max-sm:flex-col max-sm:mt-5 md:mt-9 max-md:gap-3 sm:mt-4">
           <div className="flex gap-4 md:gap-1">
             <div>
               <a target="_blank" href={homepage} className="link">
-                <button className="transition duration-500 hover:-translate-y-1">
+                <button className="transition duration-500 hover:-translate-y-1 button">
                   Website
                   <FaLink className="h-3" />
                 </button>
@@ -90,7 +92,7 @@ export default function MovieCard(props) {
                 href={`https://www.imdb.com/title/${imdbId}/`}
                 className="link"
               >
-                <button className="transition duration-500 hover:-translate-y-1">
+                <button className="transition duration-500 hover:-translate-y-1 button">
                   IMDB
                   <FaImdb className="h-3" />
                 </button>
@@ -103,7 +105,6 @@ export default function MovieCard(props) {
               href={homepage}
               className="flex justify-center rounded-full items-center gap-1 text-[10px] font-extralight text-white p-2.5 bg-[#263238] hover:bg-transparent hover:text-[#263238] border-[1px] border-[#263238] transition duration-500 hover:-translate-y-1"
             >
-              <Link />
               Back
             </div>
           </Link>

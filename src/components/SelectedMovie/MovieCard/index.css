@@ -11,7 +11,7 @@
     line-height: 25px;
     margin-top: 12px;
 } */
-.left_side_card button{
+.left_side_card .button{
     width: 100px;
     /* height: 50px; */
     padding: 10px;
