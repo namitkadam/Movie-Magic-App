@@ -1,18 +1,23 @@
 {
   "files": {
-    "main.css": "/Movie-Magic-App/static/css/main.57c182cf.css",
-    "main.js": "/Movie-Magic-App/static/js/main.9b61256c.js",
+    "main.css": "/Movie-Magic-App/static/css/main.005ac9b1.css",
+    "main.js": "/Movie-Magic-App/static/js/main.3274abc1.js",
     "static/js/453.6f2e229a.chunk.js": "/Movie-Magic-App/static/js/453.6f2e229a.chunk.js",
+    "static/media/Person.jpg": "/Movie-Magic-App/static/media/Person.7d7525656fd4e81e8343.jpg",
     "static/media/Empty-pana.png": "/Movie-Magic-App/static/media/Empty-pana.4c559af3398bb7c1efb4.png",
     "static/media/Movie.png": "/Movie-Magic-App/static/media/Movie.9fbb66b1c50ac8371abd.png",
     "static/media/Empty.png": "/Movie-Magic-App/static/media/Empty.24ac0513aa6649fceaf7.png",
+    "static/media/slick.svg": "/Movie-Magic-App/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/Movie-Magic-App/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/Movie-Magic-App/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/Movie-Magic-App/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/Movie-Magic-App/index.html",
-    "main.57c182cf.css.map": "/Movie-Magic-App/static/css/main.57c182cf.css.map",
-    "main.9b61256c.js.map": "/Movie-Magic-App/static/js/main.9b61256c.js.map",
+    "main.005ac9b1.css.map": "/Movie-Magic-App/static/css/main.005ac9b1.css.map",
+    "main.3274abc1.js.map": "/Movie-Magic-App/static/js/main.3274abc1.js.map",
     "453.6f2e229a.chunk.js.map": "/Movie-Magic-App/static/js/453.6f2e229a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.57c182cf.css",
-    "static/js/main.9b61256c.js"
+    "static/css/main.005ac9b1.css",
+    "static/js/main.3274abc1.js"
   ]
 }
