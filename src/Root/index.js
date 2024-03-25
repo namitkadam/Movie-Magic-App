@@ -5,7 +5,7 @@ import LeftSideNavbar from "../components/LeftSideNavbar";
 export default function RootLayout() {
   return (
     <>
-      <div className="">
+      <div className=" pb-10">
         <Header />
         <div className="flex justify-center m-auto">
           <LeftSideNavbar />

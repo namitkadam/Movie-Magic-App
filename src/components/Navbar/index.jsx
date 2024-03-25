@@ -11,7 +11,11 @@ export default function Navbar() {
     <>
       <div className="lg:hidden flex items-center">
         <button onClick={() => setToggleMenu(!toggleMenu)}>
-          <FiMenu className={`w-6 h-6  ${!toggleMenu ? "block" : "hidden"}`} />
+          <FiMenu
+            className={`w-6 h-6 text-white  ${
+              !toggleMenu ? "block" : "hidden"
+            }`}
+          />
         </button>
       </div>
 
